@@ -11,7 +11,7 @@ Webbapplikationen är en veckoplan för maträtter och inköpslista och konsumer
 ### Användning  
 
 #### Clona Project:   
-git clone https://github.com/Webbutvecklings-programmet/projekt---klient-applikation-BeaBjorn.git    
+git clone https://github.com/BeaBjorn/Projekt---webbapplikation---DT162G.git  
 
 
 #### Installera node_modules
