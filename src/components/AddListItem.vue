@@ -55,27 +55,23 @@ export default{
                     name: this.name, 
                     units: this.units
             };
-                const resp = await fetch("http://localhost:3000/lists", {
-                    method: "POST", 
-                    headers: {
-                    "Accept": "application/json", 
-                    "Content-type": "application/json",
-                    }, 
-                    body: JSON.stringify(listBody)
-                });
+            const resp = await fetch("http://localhost:3000/lists", {
+                method: "POST", 
+                headers: { "Accept": "application/json", 
+                           "Content-type": "application/json",
+                }, 
+                body: JSON.stringify(listBody)
+            });
 
-                const data = await resp.json();
-
-                    this.name = "",
-                    this.units = "",
-                    this.added = "Item added!"
-
-                    this.$emit("itemAdded");
+            const data = await resp.json();
+                this.name = "",
+                this.units = "",
+                this.added = "Item added!"
+                this.$emit("itemAdded");
             }
         }
-
-        }
     }
+}
 
 </script>
 

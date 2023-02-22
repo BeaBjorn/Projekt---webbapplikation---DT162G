@@ -16,10 +16,10 @@ Senast uppdaterad: 2023-02-13
         <form @submit.prevent="updateFood()">
             <h3 class="heading">Edit item info</h3>
         <label for="food">Food : </label><br />
-        <p class="error" v-if="food.length < 3 && food.length > 0">Must contain 5 characters or more!</p><br class="addBr" />
+
         <input name="food" class="updtInput" v-model="food" type="text"/><br />
         <input class="sub" type="submit" value="Update" />
-        <button class="exit"><RouterLink  to="/">Exit</RouterLink></button>
+        <RouterLink class="exit" to="/">Exit</RouterLink>
         </form>
     </div>
 </template>
@@ -146,10 +146,8 @@ export default{
         background-color: white;
         border: none;
         color: black;
-        padding: 2%;
-        width: 20%;
+        padding: 1.4% 5% 2% 5%;
         margin-left: 3%;
-
     }
 
     a{

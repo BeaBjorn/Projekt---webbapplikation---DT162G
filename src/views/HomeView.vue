@@ -30,9 +30,9 @@ Senast uppdaterad: 2023-02-13
 <!-- The component AddListItem is included to show form created in the component AddListItem -->
 <!-- When itemAdded is emoted the function GetLists is run to update list with new data -->
     <div class="bigDiv">
-        <h2>Shopping List</h2>
+        <h2 id="shoppingList">Shopping List</h2>
             <div class="smallDiv">
-                  <List @deleteItem="deleteItem(list._id)" class="list" v-for="list in lists" :list="list" :key="list.id" />
+              <List @deleteItem="deleteItem(list._id)" class="list" v-for="list in lists" :list="list" :key="list.id" />
             </div>
             <div class="add">
               <AddListItem @itemAdded="getLists()"  />
@@ -120,8 +120,7 @@ export default {
 
   .bigDiv{
     margin: auto;
-    margin-bottom: 3%;
-    transition: 300ms;
+    margin-bottom: 1%;
   }
 
   .smallDiv{

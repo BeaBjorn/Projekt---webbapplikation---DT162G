@@ -17,11 +17,11 @@ Senast uppdaterad: 2023-02-13
             <h3 class="heading">Edit item info</h3>
                 <label for="name">Name : </label><br />
                 <p class="error" v-if="name.length < 3 && name.length > 0">Must contain 3 characters or more!</p><br class="addBr" />
-                <input name="name" class="updtInput" v-model="name" type="text"/><br />
+                <input name="name" class="updtInput" v-model="name" type="text" required/><br />
                 <label for="units">Units : </label><br />
                 <input name="units" class="updtInput" v-model="units" type="number"/><br />
                 <input class="sub" type="submit" value="Update" />
-            <button class="exit"><RouterLink  to="/">Exit</RouterLink></button>
+                <RouterLink class="exit" to="/">Exit</RouterLink>
         </form>
     </div>
 </template>
@@ -72,9 +72,10 @@ export default{
 //When a item has been updated the user gets redirected to the home page
         async updateItem() {
             let id = this.$route.params.id;
-            let itemBody = {
-                name: this.name,
-                units: this.units
+            if(this.name.length >= 3){
+                let itemBody = {
+                    name: this.name,
+                    units: this.units
             };
           
             const resp = await fetch("http://localhost:3000/lists/" + id, {
@@ -87,6 +88,7 @@ export default{
                 });
             const data = await resp.json();
             this.$router.push("/");
+            }
         },
     },
 //Mounted methods to run on page load
@@ -145,10 +147,8 @@ export default{
         background-color: white;
         border: none;
         color: black;
-        padding: 2%;
-        width: 20%;
+        padding: 1.4% 5% 2% 5%;
         margin-left: 3%;
-
     }
 
     a{
